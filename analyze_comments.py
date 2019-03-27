@@ -96,7 +96,6 @@ if __name__ == '__main__':
 
     # List of user ids that shall be analyzed
     username_list = ['UC4teOyQNXzMH94YMYySl9mA']
-    username_list = ['UCASLfWxw8atzwL3ymPeuv2Q']
 
     for user in username_list:
         counter, all_comments = channels_list_by_username(service, user)
