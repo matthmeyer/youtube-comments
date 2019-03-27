@@ -101,7 +101,14 @@ if __name__ == '__main__':
     for user in username_list:
         counter, all_comments = channels_list_by_username(service, user)
 
-        # Write the result to a csv file
+        # Write all comments to a csv files
+        with open('comments_%s.csv' % user, 'w', newline='', encoding='utf-8') as csvfile:
+            csvwriter = employee_writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+
+            for el in all_comments:
+                csvwriter.writerow([str(el.replace('\n', ' '))])
+
+        # Write all words and their frequency to another csv files
         with open('wordlist_%s.csv' % user, 'w', newline='', encoding='utf-8') as csvfile:
             csvwriter = employee_writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
