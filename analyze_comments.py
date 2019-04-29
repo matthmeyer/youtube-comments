@@ -50,8 +50,6 @@ def channels_list_by_username(service, user):
         else:
             playlistitems_left = False
 
-        playlistitems_left = False
-
         for playlist_item in playlist_items['items']:
             video_id = playlist_item['snippet']['resourceId']['videoId']
 
